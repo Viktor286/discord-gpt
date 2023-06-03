@@ -15,6 +15,7 @@ export default async function makeRequest(options: RequestOptions, data: string)
             });
 
             res.on("end", () => {
+                console.log('Request responseBody', responseBody);
                 resolve(responseBody);
             });
         });

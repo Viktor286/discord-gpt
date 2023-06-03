@@ -13,11 +13,20 @@ interface ISettings {
 }
 
 export default function makeChatPrompt(messages?: IMessage[], settings: ISettings = {}) {
+    const defaultMessages = [
+        { role: "system", content: "You are an AI assistant that helps people find information." },
+        { role: "user", content: "marco!" },
+    ];
+
+    if (messages && messages.length > 0) {
+        messages = messages.map((msg) => {
+            msg.content = encodeURIComponent(msg.content)
+            return msg;
+        })
+    }
+
     return {
-        messages: messages ? [...messages] : [
-            { role: "system", content: "You are an AI assistant that helps people find information." },
-            { role: "user", content: "marco!" },
-        ],
+        messages: messages || defaultMessages,
         model: "gpt-4",
         max_tokens: 1800,
         temperature: 0.7,
