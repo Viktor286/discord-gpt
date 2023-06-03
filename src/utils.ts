@@ -24,8 +24,10 @@ export function splitTextInChunks(text: string, chunkSize: number) {
 }
 
 export async function multiMessageSend(channel: AnyThreadChannel, longMessage: string) {
+    console.log('Sending multiMessage started from: ', longMessage.slice(0, 20));
     const chunks = splitTextInChunks(longMessage, 1900);
     for (let i = 0; i < chunks.length; i++) {
         await channel.send(`'''${chunks[i]}`);
     }
+    console.log('MultiMessage successfully sent');
 }
