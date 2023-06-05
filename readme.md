@@ -18,3 +18,6 @@ To initialize a new chat thread, start your message with exclamation (!) charact
 Altering chat history:
 You can delete bot massage by marking it with emoji :wastebasket: .
 You also can delete your own messages by right-click discord controls.
+
+![image](https://github.com/Viktor286/discord-gpt/assets/13506547/e5c1f548-d668-417a-92f7-dda864f0d4d4)
+![image](https://github.com/Viktor286/discord-gpt/assets/13506547/c9de2d1c-35b5-41f1-9575-b58bbb5b2b6d)
